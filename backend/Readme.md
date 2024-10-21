@@ -16,11 +16,11 @@ This backend service fetches weather data from OpenWeatherMap, processes and sto
    ```bash
    git clone https://github.com/your-username/weather-monitoring-system.git
    cd weather-monitoring-system/backend
-2.Install dependencies:
+2.**Install dependencies**:
 ```bash
   npm install
 ```
-3.Set up environment variables: Create a .env file in the backend directory with the following content:
+3.**Set up environment variables: Create a .env file in the backend directory with the following content**:
 
 .env
 ```bash
@@ -30,36 +30,30 @@ SENDGRID_API_KEY=your_sendgrid_api_key
 SENDGRID_TEMPLATE_ID=your_template_id
 TEMP_THRESHOLD=35
 ```
-4.Run the backend server:
+4.**Run the backend server**:
 
 ```bash
 npm run dev
 ```
-API Endpoints
-Fetch Weather Data
-URL: /api/weather/fetch
+## API Endpoints
 
-Method: GET
+### Fetch Weather Data
+- **URL**: `/api/weather/fetch`
+- **Method**: GET
+- **Description**: Fetches weather data from OpenWeatherMap and stores it in MongoDB.
 
-Description: Fetches weather data from OpenWeatherMap and stores it in MongoDB.
+### Check Weather and Send Alerts
+- **URL**: `/api/weather/check-weather`
+- **Method**: POST
+- **Description**: Checks the weather data and sends alerts if thresholds are exceeded.
 
-Check Weather and Send Alerts
-URL: /api/weather/check-weather
+### Summaries
+- **URL**: `/api/weather/summaries`
+- **Method**: GET
+- **Description**: Fetches daily weather summaries.
 
-Method: POST
-
-Description: Checks the weather data and sends alerts if thresholds are exceeded.
-
-Summaries
-URL: /api/weather/summaries
-
-Method: GET
-
-Description: Fetches daily weather summaries.
-
-Folder Structure
-
-Copy
+## Folder Structure
+```plaintext
 backend/
 ├── src/
 │   ├── config/
@@ -81,8 +75,12 @@ backend/
 │   └── index.ts
 ├── .env
 └── package.json
+```
 Screenshots
-Include screenshots here showing backend data storage and email alert examples.
+![calculating summaries](https://github.com/Umang-Sharma1/weather-alerting/blob/main/Screenshot%202024-10-21%20235416.png)
+![Fetching weather and sending alerts](https://github.com/Umang-Sharma1/weather-alerting/blob/main/Screenshot%202024-10-21%20235331.png)
+![Weather Data Alert sent successful](https://github.com/Umang-Sharma1/weather-alerting/blob/main/Screenshot%202024-10-21%20235153.png)
+![Alert showing on gmail](https://github.com/Umang-Sharma1/weather-alerting/blob/main/Screenshot%202024-10-21%20235626.png)
 
 Contributions
 Feel free to submit issues and pull requests.
